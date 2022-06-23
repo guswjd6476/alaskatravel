@@ -1,0 +1,76 @@
+
+    
+    <div class="sub_visual">
+        <div class="bg orora">
+            <p class="title">공지사항</p>
+            <p class="txt">내가 꿈꾸던 여행지를 현실에서 만나세요!</p>
+        </div>
+    </div>
+    <div class="w1200 content_box">
+        <div id="content">
+            <div class="subpg_title_wrap">
+                <h2 class="subpg_title">공지사항</h2>
+            </div>
+            <div class="write_t_wrap">
+                <a href="notice">목록</a>
+            </div> 
+            <div class="answer">
+                <h3>문의하시기 전 확인해 주세요.</h3>
+            </div>
+            <div>
+                <ul class="imp_notice">
+                    <li>· 고객님의 소중한 의견을 빠르고 정확하게 해결하기 위해 최선을 다하겠습니다.</li>
+                    <li>· 예약한 상품의 취소는 카톡이나 Q&A를 통해 문의해 주세요.</li>
+                </ul>
+            </div>
+            <% if(typeof errs !== 'undefined'){ %>
+                <%errs.forEach(()=>{%>
+                    <h3><%=err.param%> : <%=err.msg%></h3>
+                <%})%>
+            <%}%>
+            <div class="write_table">
+                <form method="POST" action="/store">
+                    <table border="1" id="w_table">
+                        <colgroup>
+                            <col style="width: 18%;">
+                        </colgroup>
+                        <tbody>
+                              <tr>
+                                  <th>
+                                      <span class="impt">이름</span>
+                                  </th>
+                                  <td>
+                                      <div class="form_name">
+                                          <input type="text" name="writer" class="input_p name_im" style="width: 30%;">
+                                      </div>
+                                  </td>
+                              </tr>
+                            <tr>
+                                <th>
+                                    <span class="impt">제목</span>
+                                </th>
+                                <td>
+                                    <div class="form_title">
+                                       <input type="text" name="title" class="input_title" style="width: 100%;">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <span class="impt">내용</span>
+                                </th>
+                                <td>
+                                    <div class="form_text">
+                                        <textarea name="content" style="width: 100%;"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                          </tbody>
+                    </table>
+                    <input class="btn_go" type="submit" value="저장">
+                    <input class="btn_go" type="button" value="뒤로" onclick="javascript:location.href ='notice'">
+                </form>               
+            </div>
+        </div>
+    </div>
+
