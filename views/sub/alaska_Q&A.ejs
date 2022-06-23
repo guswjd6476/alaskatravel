@@ -1,0 +1,60 @@
+
+        <div class="sub_visual">
+            <div class="bg orora">
+                <p class="title">고객센터</p>
+                <p class="txt">내가 꿈꾸던 여행지를 현실에서 만나세요!</p>
+            </div>
+        </div>
+        <div class="w1200 content_box">
+            <div id="content">
+                <div class="subpg_title_wrap">
+                    <h2 class="subpg_title">여행상품 Q&A</h2>
+                </div>
+                <div class="q_table_wrap">
+                    <div class="n_table">
+                        <table border="1">
+                            <colgroup>
+                                <col style="width:100px">
+                                <col style="width:auto">
+                                <col style="width:100px">
+                                <col style="width:150px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">글쓴이</th>
+                                    <th scope="col">작성일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%rows.forEach((row, index) => {%>
+                                <tr id="tr_notice">
+                                    <td class="center lb">
+                                        <input type="hidden" name="id" value="<%=row.id%>">
+                                        <%=row.id%>
+                                    </td>
+                                    <td class="lb"><a onclick="javascript:location.href='/qna_page?id=<%=row.id%>'"><%=row.title%></a></td>
+                                    <td class="center lb"><%=row.writer%></td>
+                                    <td class="center lb"><%=row.updated%></td>
+                                </tr>
+                                <%})%>                               
+                            </tbody>   
+                        </table>
+                    </div>
+                </div>
+                <div class="main_b_wrap">
+                    <a href="qna_write">글쓰기</a>
+                </div>
+                <div class="m_b_number">
+                    <a href="#" class="n_left"></a>
+                    <a href="#" class="b_number">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="n_right"></a>
+                </div>    
+            </div>
+        </div>
+
+        <a href="#" class="top">
+            <img src="../img\logo\b_top.png">
+        </a>
